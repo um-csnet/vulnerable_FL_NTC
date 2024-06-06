@@ -31,6 +31,7 @@ Paper: Vulnerabilities of Federated Learning-Based Network Traffic Classificatio
 2. Start FL Client program by running Experiment/Control/client_mlp_normal[1-3].py script. Set server IP appropriately and make sure server is running.
 3. To evaluate, use the Experiment/Evaluate/evaluate.py script
 4. Make sure the client[1-3] and server test datasets are in the same folder as client/server program or you can configure file path appropriately
+5. To simulate dropping parameters update measure. Remove Client [2-3] from the FL training.
 
 ## All-Label Flipping Attack
 1. Run Experiment/Adversarial_Attacks/labelflip.py script to flip client 2 and 3 dataset label. Set client dataset file appropriately in the script.
