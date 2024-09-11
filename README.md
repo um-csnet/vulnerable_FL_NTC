@@ -1,5 +1,5 @@
 # Vulnerable_FL_NTC
-Paper: Vulnerabilities of Federated Learning-Based Network Traffic Classification in Edge Computing Environment
+Paper: Adversarial Attack and Defence of Federated Learning-Based Network Traffic Classification in Edge Computing Environment
 
 # Deployed on:
 ## FL Server
