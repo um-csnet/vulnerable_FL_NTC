@@ -81,6 +81,16 @@ encoded_y = encoder.transform(y)
 # convert integers to dummy variables (i.e. one hot encoded)
 label_y = np_utils.to_categorical(encoded_y)
 
+# Print the classes and their corresponding encoding
+print("Classes and their corresponding encoded values:")
+for i, class_label in enumerate(encoder.classes_):
+    print(f"Class '{class_label}' is encoded as {i}")
+
+# labels map back to the original classes
+print("First five row:")
+for i in range(5):
+    print(f"Original label: {y.iloc[i]} -> One-hot encoded: {label_y[i]}")
+
 #Split the train and test set
 from sklearn.model_selection import train_test_split
 x_train, x_test,y_train,y_test =train_test_split(scaled_x,label_y,test_size=0.3)
