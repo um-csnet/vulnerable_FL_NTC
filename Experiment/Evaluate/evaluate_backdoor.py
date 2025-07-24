@@ -15,9 +15,6 @@ model = keras.models.load_model(model_name)
 x_test = np.load("x_test-MLP-Multiclass-ISCX-740features.npy")
 y_test = np.load("y_test-MLP-Multiclass-ISCX-740features.npy")
 
-#x_test = np.load("x_test-bal-ISCX-740features.npy")
-#y_test = np.load("y_test-bal-ISCX-740features.npy")
-
 count = 1
 while count <= 740 :
     tmp = 0.00
@@ -34,23 +31,14 @@ target_label = 1  # Target label for the backdoor attack, start with label 0 - 9
 test_instance = x_test[0]  # From other class number 2
 test_instance2 = x_test[3] # from target class
 
-#print(x_test[0])
-#print(y_test[0])
-
-#print(x_test[3])
-#print(y_test[3])
-
-#poisoned_instance = test_instance + backdoor_pattern # From class number 2
-#poisoned_instance2 = test_instance2 # From target class 1 without poison pattern
-
-
-# Test the backdoor attack using Balanced Dataset
-#test_instance = x_test[2]  # From other class
-#test_instance2 = x_test[8] # from target class
 
 poisoned_instance = test_instance + backdoor_pattern # From class number 2
+poisoned_instance = test_instance.copy()
+##Start to add backdoor pattern starting from column 40 (normally IP + TCP header = 40 bytes)
+poisoned_instance[40:] = test_instance[40:] + backdoor_pattern[40:]
+
 poisoned_instancex = test_instance # From class number 2 without backdoor pattern
-#poisoned_instance2 = test_instance2 + backdoor_pattern # From target class 1
+
 poisoned_instance2 = test_instance2 # From target class 1 without poison pattern
 
 y_pred_class = np.argmax(model.predict(x_test),axis=1)
