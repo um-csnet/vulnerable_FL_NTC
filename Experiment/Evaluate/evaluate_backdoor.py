@@ -31,9 +31,7 @@ target_label = 1  # Target label for the backdoor attack, start with label 0 - 9
 test_instance = x_test[0]  # From other class number 2
 test_instance2 = x_test[3] # from target class
 
-
-poisoned_instance = test_instance + backdoor_pattern # From class number 2
-poisoned_instance = test_instance.copy()
+poisoned_instance = test_instance.copy() # From class number 2
 ##Start to add backdoor pattern starting from column 40 (normally IP + TCP header = 40 bytes)
 poisoned_instance[40:] = test_instance[40:] + backdoor_pattern[40:]
 
