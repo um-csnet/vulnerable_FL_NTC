@@ -1,5 +1,15 @@
-# Vulnerable_FL_NTC
-Paper: Adversarial Attack and Defence of Federated Learning-Based Network Traffic Classification in Edge Computing Environment
+# Vulnerable FL-Based NTC
+This study investigates the vulnerabilities of FLbased NTC training against four types of adversarial attacks: label flipping (LF) and model poisoning, and in­
+troduces customized backdoor and GAN-based attack scenarios tailored specifically to FL-based NTC training.
+
+![Adversarial attack surface in FL-based NTC](fig1.png "Adversarial attack surface in FL-based NTC")<br>
+Fig1: Adversarial attack surface in FL-based NTC 
+
+![Proposed backdoor attack workflow](fig2.png "Proposed backdoor attack workflow")<br>
+Fig2: Proposed backdoor attack workflow
+
+![Proposed gan-based attack workflow](fig3.png "Proposed gan-based attack workflow")<br>
+Fig3: Proposed gan-based attack workflow
 
 # Deployed on:
 ## FL Server
@@ -85,5 +95,25 @@ Paper: Adversarial Attack and Defence of Federated Learning-Based Network Traffi
 3. Start FL server program with KRUM Aggregation by running Experiment/Adversarial_Defences/server_mlp_krum.py script. Set number of malicious client and number of client appropriately in the script. Change model name appropriately according to experiment.
 4. Start FL server program with KRUM Aggregation by running Experiment/Adversarial_Defences/server_mlp_weighted_fedavg.py script. Set client weightage appropriately in the script, make sure the sum of the weight=100%. Set number of client appropriately in the script. Change model name appropriately according to experiment.
 5. Use the same instruction as above to run adversarial attacks and evaluate the NTC model.
+
+## Citation
+
+Published at Computer Networks 2025.  
+Link to paper: https://www.sciencedirect.com/science/article/pii/S1389128625007054
+
+```bibtex
+@article{ARIFFIN2025111739,
+title = {Adversarial attack and defence of federated learning-based network traffic classification in edge computing environment},
+journal = {Computer Networks},
+volume = {272},
+pages = {111739},
+year = {2025},
+issn = {1389-1286},
+doi = {https://doi.org/10.1016/j.comnet.2025.111739},
+url = {https://www.sciencedirect.com/science/article/pii/S1389128625007054},
+author = {Azizi Ariffin and Faiz Zaki and Hazim Hanif and Nor Badrul Anuar},
+keywords = {Network traffic classification, Network management, Adversarial attacks, Federated learning, Deep learning, Generative adversarial network},
+}
+```
 
 For any inquiries you can email [azizi.mohdariffin@gmail.com]
